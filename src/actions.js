@@ -1,0 +1,30 @@
+import {
+  CHANGE_SEARCH_FIELD,
+  REQUEST_USERS_PENDING,
+  REQUEST_USERS_SUCCESS,
+  REQUEST_USERS_FAILED,
+  TOGGLE_POPUP,
+  INCREASE_NUMBER,
+} from "./constants";
+
+export const setSearchField = (text) => ({
+  type: CHANGE_SEARCH_FIELD,
+  payload: text,
+});
+
+export const requestUsers = () => (dispatch) => {
+  dispatch({ type: REQUEST_USERS_PENDING });
+  fetch("http://localhost:3000/")
+    .then((response) => response.json())
+    .then((data) => dispatch({ type: REQUEST_USERS_SUCCESS, payload: data }))
+    .catch((error) => dispatch({ type: REQUEST_USERS_FAILED, payload: error }));
+};
+
+export const togglePopup = () => ({
+  type: TOGGLE_POPUP,
+});
+
+export const increaseNumber = (payload) => ({
+  type: INCREASE_NUMBER,
+  payload: payload,
+});

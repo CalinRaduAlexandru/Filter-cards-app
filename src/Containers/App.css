@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.top-bar {
+  position: absolute;
+  left: 0%;
+  background-color: black;
+}

@@ -1,0 +1,29 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  padding: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 90px;
+}
+
+.wrapper {
+}
+/*
+@media all and (max-width: 1300px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media all and (max-width: 930px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 600px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+} */
