@@ -15,7 +15,7 @@ class CardForm extends React.Component {
       name: "",
       email: "",
       phone: "",
-      number: 4,
+      number: 16,
     };
   }
   onNameChange = (event) => {
