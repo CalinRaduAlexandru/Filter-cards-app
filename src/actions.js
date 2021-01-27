@@ -4,7 +4,6 @@ import {
   REQUEST_USERS_SUCCESS,
   REQUEST_USERS_FAILED,
   TOGGLE_POPUP,
-  INCREASE_NUMBER,
 } from "./constants";
 
 export const setSearchField = (text) => ({
@@ -22,9 +21,4 @@ export const requestUsers = () => (dispatch) => {
 
 export const togglePopup = () => ({
   type: TOGGLE_POPUP,
-});
-
-export const increaseNumber = (payload) => ({
-  type: INCREASE_NUMBER,
-  payload: payload,
 });

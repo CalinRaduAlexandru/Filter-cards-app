@@ -4,7 +4,6 @@ import {
   REQUEST_USERS_SUCCESS,
   REQUEST_USERS_FAILED,
   TOGGLE_POPUP,
-  INCREASE_NUMBER,
 } from "./constants";
 
 const INITIAL_STATE_SEARCH = {
@@ -49,22 +48,6 @@ export const togglePopup = (state = INITIAL_STATE_POPUP, action) => {
   switch (action.type) {
     case TOGGLE_POPUP:
       return { ...state, popup: !state.popup };
-    default:
-      return state;
-  }
-};
-
-const INITIAL_USER = {
-  name: "",
-  email: "",
-  phone: "",
-  number: 0,
-};
-
-export const user = (state = INITIAL_USER, action) => {
-  switch (action.type) {
-    case INCREASE_NUMBER:
-      return { ...state, number: state.number + 1 };
     default:
       return state;
   }
