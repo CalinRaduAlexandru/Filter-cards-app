@@ -13,7 +13,7 @@ export const setSearchField = (text) => ({
 
 export const requestUsers = () => (dispatch) => {
   dispatch({ type: REQUEST_USERS_PENDING });
-  fetch("http://localhost:3000/")
+  fetch("https://shielded-mesa-90771.herokuapp.com/")
     .then((response) => response.json())
     .then((data) => dispatch({ type: REQUEST_USERS_SUCCESS, payload: data }))
     .catch((error) => dispatch({ type: REQUEST_USERS_FAILED, payload: error }));

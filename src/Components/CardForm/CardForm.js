@@ -6,6 +6,7 @@ import { requestUsers } from "../../actions";
 import CancelX from "./CancelX";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import { withRouter } from "react-router-dom";
 
 class CardForm extends React.Component {
   constructor() {
@@ -16,6 +17,7 @@ class CardForm extends React.Component {
       email: "",
       phone: "",
       number: 16,
+      route: "false",
     };
   }
   onNameChange = (event) => {
@@ -41,7 +43,7 @@ class CardForm extends React.Component {
   onSubmitSignIn = (event) => {
     event.preventDefault();
     const { name, email, phone, number } = this.state;
-    fetch("http://localhost:3000/", {
+    fetch("https://shielded-mesa-90771.herokuapp.com/", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -51,8 +53,9 @@ class CardForm extends React.Component {
         number: number,
       }),
     });
-    return (window.location = "/");
+    setTimeout(() => (window.location = "/"), 100);
   };
+
   render() {
     return (
       <div className="shade">
@@ -61,6 +64,7 @@ class CardForm extends React.Component {
           <div className="header-card">
             <h1 className="register"> Register</h1>
           </div>
+          {this.route ? <h1>damn it</h1> : null}
           <div className="user">
             <NavigateBeforeIcon
               onClick={this.numberDecrease}
@@ -139,4 +143,7 @@ const mapDispatchToProps = (dispatch) => ({
   onRequestUsers: () => dispatch(requestUsers()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(CardForm));
