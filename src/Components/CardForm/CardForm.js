@@ -53,7 +53,7 @@ class CardForm extends React.Component {
         number: number,
       }),
     });
-    setTimeout(() => (window.location = "/"), 100);
+    setTimeout(() => (window.location = "/"), 1000);
   };
 
   render() {
